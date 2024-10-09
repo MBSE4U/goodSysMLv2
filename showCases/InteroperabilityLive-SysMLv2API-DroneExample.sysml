@@ -2,9 +2,12 @@ package InteroperabilityLiveDemonstrator {
     package <BA> Drone_BaseArchitecture {
         // Common concept of a Drone
 
-        abstract part def CommonDrone {
+        part def CommonDrone {
             // Mass of the Drone
             attribute actualMass :> ISQ::mass;
+
+            // Power consumption
+            attribute powerConsumption :> ISQ::power;
 
             // Spatial extent
             item boundingBox : ShapeItems::Box [1] :> boundingShapes;
@@ -117,6 +120,9 @@ package InteroperabilityLiveDemonstrator {
                 // Attributes
                 attribute actualMass : ISQBase::MassValue;
 
+                // Power consumption
+                attribute powerConsumption :> ISQ::power;
+
                 enum propKind : PropKind;
                 enum def PropKind {
                     enum clockwise;
@@ -131,6 +137,9 @@ package InteroperabilityLiveDemonstrator {
                 // Attributes
                 attribute actualMass :> ISQ::mass;
                 attribute material : ScalarValues::String;
+
+                // Power consumption
+                attribute powerConsumption :> ISQ::power;
 
                 // Spatial extent
                 item :>> shape : ShapeItems::Cylinder {
@@ -158,6 +167,9 @@ package InteroperabilityLiveDemonstrator {
                 // Attributes
                 attribute actualMass :> ISQ::mass = 0 [SI::g];
                 attribute maxCapacity :> ISQ::electricCharge = 18000 [SI::C];
+
+                // Power consumption
+                attribute powerConsumption :> ISQ::power;
             }
         }
     }
